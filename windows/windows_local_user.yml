@@ -22,6 +22,25 @@
 #       when:
 #            - var_run_sockrole
 
+- debug:
+       msg: "data from csv file in role file = {{ csvresults }} "
+
+  - name: create hostname variable
+    include_role:
+      name: win_user_modifications
+      tasks_from: valid_hostnames.yml
+    vars:
+      var_actionfrommainfile: "windows"      
+
+
+  - debug:
+      msg: "valid hostnames = {{ valid_hostnames_p1 }}"
+
+  - name: Fail when no windows tasks or no valid hostnames
+    fail:
+       msg: " No windows  modification tasks in csv file"
+    when: valid_hostnames_p1|length == 0
+
 - name: user management play2 on hosts read from CSV file
   hosts: "{{ hostvars['localhost']['valid_hostnames_p1'] }}"
 
