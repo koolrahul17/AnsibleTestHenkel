@@ -4,14 +4,14 @@
   vars:
     var_directory: "{{ role_path }}/files/apm_iam_reports"
     var_inputcsvfile: "local_user_requests.csv"
-    csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action"
-    var_reponame: "github.ibm.com/apmm-ansible/apm_iam_reports.git"
+    csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action,PasswordNeverExpires,UserCannotChangePassword,AccountDisabled"
+    var_reponame: "github.com/koolrahul17/AnsibleTestHenkel.git"
     var_actionfrommainfile: "windows"      
-- name:  Play for Socks tunnel setup
-  hosts: all
-  gather_facts: false
-  vars_files:
-       - external_vars.yml  
+#- name:  Play for Socks tunnel setup
+#  hosts: all
+#  gather_facts: false
+#  vars_files:
+#       - external_vars.yml  
 #  roles:
 #     - role: event-socks-tunnel
 #       run_once: true
