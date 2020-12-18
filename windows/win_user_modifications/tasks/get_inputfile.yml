@@ -4,14 +4,14 @@
         path: "{{ var_dirtocheckout }}"
    register: st
  - debug:
-         msg: "Directory exists:{{ st.stat|default('') }}===== {{ st.stat.exists|default('') }}===search path: {{ st.stat.path|default('') }}:{{ st.stat.path|default('') is match('.*/apm_iam_reports') }}" 
+         msg: "Directory exists:{{ st.stat|default('') }}===== {{ st.stat.exists|default('') }}===search path: {{ st.stat.path|default('') }}:{{ st.stat.path|default('') is match('.*/HenkelReports') }}" 
  - name:  Remove directory if it exists
    file:
        path: "{{ st.stat.path }}"
        state: absent
    register: dirout
    when: 
-       - st.stat is defined and st.stat.exists and st.stat.path is match('.*/apm_iam_reports')
+       - st.stat is defined and st.stat.exists and st.stat.path is match('.*/HenkelReports')
  - debug:
          msg: " Directory removed-- {{ dirout|default('not removed') }}"         
 
@@ -34,21 +34,21 @@
  - name: Git Init
    shell: "git init" 
    args:
-       chdir: "{{ role_path }}/files/apm_iam_reports"
+       chdir: "{{ role_path }}/files/HenkelReports"
    register: shell_output1
  - debug:
          msg: "Output of shell commands ------{{ shell_output1 }}"
  - name: Git Fetch
    shell: "git fetch" 
    args:
-       chdir: "{{ role_path }}/files/apm_iam_reports"
+       chdir: "{{ role_path }}/files/HenkelReports"
    register: shell_output2
  - debug:
          msg: "Output of shell commands ------{{ shell_output2 }}"
  - name: Git Checkout file
    shell: "git checkout origin/master -- {{ var_inputcsvfile }}"
    args:
-       chdir: "{{ role_path }}/files/apm_iam_reports"
+       chdir: "{{ role_path }}/files/HenkelReports"
    register: shell_output3
  - debug:
          msg: "Output of shell commands ------{{ shell_output3 }}"
