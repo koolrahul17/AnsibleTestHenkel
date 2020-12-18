@@ -37,12 +37,12 @@
        msg: " No  {{ var_actionfrommainfile }} tasks or no valid hostnames"
     when: valid_hostnames_p1|length == 0
 
-  - name: Run windows socket role
-    include_role: 
-         name: event-socks-tunnel
-    run_once: true
-    vars:
-      - acc_id: "apm"
-      - transaction_id: "{{ tower_job_id }}"
-    when:
-      - var_run_sockrole
+ # - name: Run windows socket role
+ #   include_role: 
+ #        name: event-socks-tunnel
+ #   run_once: true
+ #   vars:
+ #     - acc_id: "apm"
+ #     - transaction_id: "{{ tower_job_id }}"
+ #   when:
+ #     - var_run_sockrole
