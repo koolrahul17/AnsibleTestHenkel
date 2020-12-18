@@ -5,7 +5,7 @@
     var_directory: "{{ role_path }}/files/HenkelReports"
     var_inputcsvfile: "local_user_requests.csv"
     csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action,PasswordNeverExpires,UserCannotChangePassword,AccountDisabled"
-    var_reponame: "AnsibleTestHenkel"
+    var_reponame: "github.com/koolrahul17/AnsibleTestHenkel.git"
     var_actionfrommainfile: "windows"      
 #- name:  Play for Socks tunnel setup
 #  hosts: all
@@ -63,6 +63,6 @@
   vars:
        var_request_filepath: "{{ role_path }}/files/HenkelReports"
        var_request_file_name: "local_user_requests.csv"
-       var_reponame: "AnsibleTestHenkel"
+       var_reponame: "github.com/koolrahul17/AnsibleTestHenkel.git"
        var_csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action,PasswordNeverExpires,UserCannotChangePassword,AccountDisabled"
 
