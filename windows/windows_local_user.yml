@@ -27,7 +27,7 @@
 
   vars:
     var_output_txt: ""
-    var_csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action"
+    var_csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action,PasswordNeverExpires,UserCannotChangePassword,AccountDisabled"
 
   tasks:
    - name: Get csvresults from previous play
@@ -61,8 +61,8 @@
 - name: play4 on localhost
   import_playbook: output_checkin.yml
   vars:
-       var_request_filepath: "{{ role_path }}/files/apm_iam_reports"
+       var_request_filepath: "{{ role_path }}/files/HenkelReports"
        var_request_file_name: "local_user_requests.csv"
-       var_reponame: "github.ibm.com/apmm-ansible/apm_iam_reports.git"
-       var_csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action"
+       var_reponame: "github.com/koolrahul17/AnsibleTestHenkel.git"
+       var_csv_fields: "Number,Userid,Fullname,Description,Password,Groups,Changepasswordatlogin,hostname,Action,PasswordNeverExpires,UserCannotChangePassword,AccountDisabled"
 
