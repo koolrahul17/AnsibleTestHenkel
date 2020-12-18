@@ -6,9 +6,9 @@
   vars:
          var_current_timestamp: "{{ ansible_date_time.iso8601_basic_short }}" 
          var_local_output: ""
-         var_dirname: "{{ role_path }}/files/apm_iam_reports/output/output_{{ var_current_timestamp }}"
+         var_dirname: "{{ role_path }}/files/HenkelReports/output/output_{{ var_current_timestamp }}"
          var_output_filename: "{{ var_dirname }}/output_{{ var_current_timestamp }}.csv"
-         var_dirtocheckout: "{{ role_path }}/files/apm_iam_reports"
+         var_dirtocheckout: "{{ role_path }}/files/HenkelReports"
   vars_files:
        - external_vars.yml
 
