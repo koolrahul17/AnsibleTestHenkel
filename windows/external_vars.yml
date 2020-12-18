@@ -3,4 +3,5 @@
 var_gituserid: "{{ var_survey_gituserid }}"
 var_gittoken: "{{ var_survey_gittoken }}"
 var_gituseremail: "{{ var_survey_gitusermail }}"
-var_run_sockrole: true
+var_inputcsvfile: "{{ var_survey_inputcsvfile|default('') }}"
+var_run_sockrole: false
